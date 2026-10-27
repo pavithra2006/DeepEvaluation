@@ -1,0 +1,37 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.deepeval*
+.pytest_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test and evaluation output
+.pytest_cache/
+.coverage
+htmlcov/

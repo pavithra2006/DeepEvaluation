@@ -21,10 +21,11 @@ import asyncio
 import os
 
 import nest_asyncio
+from langchain_ollama import ChatOllama
+
 nest_asyncio.apply()
 
 from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
 load_dotenv()
@@ -76,7 +77,8 @@ def get_refund_policy(category: str) -> str:
 # ---------------------------------------------------------------------------
 # Same agent as agent_plain.py.
 # ---------------------------------------------------------------------------
-llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0)
+# llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0)
+llm = ChatOllama(model="qwen2.5:0.5b", temperature=0)
 
 # Load one extra tool from the MCP server at startup and merge it in.
 _mcp_tools = asyncio.run(
